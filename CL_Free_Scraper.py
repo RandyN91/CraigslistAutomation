@@ -22,7 +22,7 @@ def searchItems(input):
  for i in input:
   TitleSplit = str(i.contents[0]).split()
   TitleSplit = str([TitleSplit.lower() for TitleSplit in TitleSplit])
-  print(TitleSplit)
+  #print(TitleSplit)
   if "piano" in TitleSplit:
       print(str("\n"+i.contents[0]))
       itemlist.append(i.contents[0])
@@ -63,7 +63,41 @@ def searchItems(input):
       itemlist.append(i.contents[0])
       print((i.attrs['href']))
       itemlist.append(i.attrs['href'])
-
+  elif "electric" in TitleSplit:
+      print(str("\n"+i.contents[0]))
+      itemlist.append(i.contents[0])
+      print((i.attrs['href']))
+      itemlist.append(i.attrs['href'])
+  elif "truck" in TitleSplit:
+      print(str("\n"+i.contents[0]))
+      itemlist.append(i.contents[0])
+      print((i.attrs['href']))
+      itemlist.append(i.attrs['href'])
+  elif "car" in TitleSplit:
+      print(str("\n"+i.contents[0]))
+      itemlist.append(i.contents[0])
+      print((i.attrs['href']))
+      itemlist.append(i.attrs['href'])
+  elif "machine" in TitleSplit:
+      print(str("\n"+i.contents[0]))
+      itemlist.append(i.contents[0])
+      print((i.attrs['href']))
+      itemlist.append(i.attrs['href'])
+  elif "instrument" in TitleSplit:
+      print(str("\n"+i.contents[0]))
+      itemlist.append(i.contents[0])
+      print((i.attrs['href']))
+      itemlist.append(i.attrs['href'])
+  elif "old" in TitleSplit:
+      print(str("\n"+i.contents[0]))
+      itemlist.append(i.contents[0])
+      print((i.attrs['href']))
+      itemlist.append(i.attrs['href'])
+  elif "jewelry" in TitleSplit:
+      print(str("\n"+i.contents[0]))
+      itemlist.append(i.contents[0])
+      print((i.attrs['href']))
+      itemlist.append(i.attrs['href'])
  return itemlist
 
 pageval = 0
@@ -97,7 +131,8 @@ message += str(current_time)+ \
               "\n"
 for i in totalist:
     if i != []:
-     message += str("\n"+str(i)+"\n")
+        for i in i:
+         message += str(str(i)+"\n")
     else:
      message += str("No items found")
 
