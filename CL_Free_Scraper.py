@@ -3,6 +3,8 @@ from datetime import datetime
 import requests
 import time
 import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
 Free_CL_URL = "https://newyork.craigslist.org/d/free-stuff/search/zip"
 
@@ -109,10 +111,6 @@ while True:
 
  if "search and you will find" and "the harvest moon wanes" in soup.text:
   print("\nEnd of Script")
-  s = smtplib.SMTP('smtp.office365.com', 587)
-  s.starttls()
-  s.login("randy.naraine@mail.citytech.cuny.edu", "g0$$iping")
-  s.sendmail("randy.naraine@mail.citytech.cuny.edu", "randy.naraine64@gmail.com","Script Failure check Loops")
   break
  else:
   print("\nSearching page " + str((int(pageval / 120))))
@@ -126,20 +124,17 @@ while True:
 now = datetime.now()
 current_time = now.strftime("%H:%M:%S")
 
-message = "Subject: CL Free Scraper Bot Report "
-message += str(current_time)+ \
-              "\n"
+
+message = "Subject: CL Free Scraper Bot Report\n\n"
+
 for i in totalist:
-    if i != []:
-        for i in i:
-         message += str(str(i)+"\n")
-    else:
-     message += str("No items found")
+     for i in i:
+        message += str("\n"+str(i)+"\n")
 
 s = smtplib.SMTP('smtp.office365.com', 587)
 s.starttls()
 s.login("randy.naraine@mail.citytech.cuny.edu", "g0$$iping")
-s.sendmail("randy.naraine@mail.citytech.cuny.edu", "randy.naraine64@gmail.com",message.encode('utf-8'))
+s.sendmail("randy.naraine@mail.citytech.cuny.edu", "randy.naraine64@gmail.com",message.encode("utf-8"))
 print(message)
 print("sent mail")
 s.quit() 
