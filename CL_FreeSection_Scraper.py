@@ -5,7 +5,6 @@ import time
 import smtplib
 from config import *
  
-
 Free_CL_URL = "https://newyork.craigslist.org/d/free-stuff/search/zip"
 
 def crawlFree(pageval):
@@ -25,7 +24,7 @@ def searchItems(input):
  for i in input:
   TitleSplit = str(i.contents[0]).split()
   TitleSplit = str([TitleSplit.lower() for TitleSplit in TitleSplit])
-  #print(TitleSplit)
+
   if "piano" in TitleSplit:
       print(str("\n"+i.contents[0]))
       itemlist.append(i.contents[0])
@@ -37,76 +36,6 @@ def searchItems(input):
       print((i.attrs['href']))
       itemlist.append(i.attrs['href'])
   elif "watch" in TitleSplit:
-      print(str("\n"+i.contents[0]))
-      itemlist.append(i.contents[0])
-      print((i.attrs['href']))
-      itemlist.append(i.attrs['href'])
-  elif "computer" in TitleSplit:
-      print(str("\n"+i.contents[0]))
-      itemlist.append(i.contents[0])
-      print((i.attrs['href']))
-      itemlist.append(i.attrs['href'])
-  elif "boat" in TitleSplit:
-      print(str("\n"+i.contents[0]))
-      itemlist.append(i.contents[0])
-      print((i.attrs['href']))
-      itemlist.append(i.attrs['href'])
-  elif "collection" in TitleSplit:
-      print(str("\n"+i.contents[0]))
-      itemlist.append(i.contents[0])
-      print((i.attrs['href']))
-      itemlist.append(i.attrs['href'])
-  elif "antique" in TitleSplit:
-      print(str("\n"+i.contents[0]))
-      itemlist.append(i.contents[0])
-      print((i.attrs['href']))
-      itemlist.append(i.attrs['href'])
-  elif "electronics" in TitleSplit:
-      print(str("\n"+i.contents[0]))
-      itemlist.append(i.contents[0])
-      print((i.attrs['href']))
-      itemlist.append(i.attrs['href'])
-  elif "motorcycle" in TitleSplit:
-      print(str("\n"+i.contents[0]))
-      itemlist.append(i.contents[0])
-      print((i.attrs['href']))
-      itemlist.append(i.attrs['href'])
-  elif "truck" in TitleSplit:
-      print(str("\n"+i.contents[0]))
-      itemlist.append(i.contents[0])
-      print((i.attrs['href']))
-      itemlist.append(i.attrs['href'])
-  elif "car" in TitleSplit:
-      print(str("\n"+i.contents[0]))
-      itemlist.append(i.contents[0])
-      print((i.attrs['href']))
-      itemlist.append(i.attrs['href'])
-  elif "show" in TitleSplit:
-      print(str("\n"+i.contents[0]))
-      itemlist.append(i.contents[0])
-      print((i.attrs['href']))
-      itemlist.append(i.attrs['href'])
-  elif "instrument" in TitleSplit:
-      print(str("\n"+i.contents[0]))
-      itemlist.append(i.contents[0])
-      print((i.attrs['href']))
-      itemlist.append(i.attrs['href'])
-  elif "vintage" in TitleSplit:
-      print(str("\n"+i.contents[0]))
-      itemlist.append(i.contents[0])
-      print((i.attrs['href']))
-      itemlist.append(i.attrs['href'])
-  elif "jewelry" in TitleSplit:
-      print(str("\n"+i.contents[0]))
-      itemlist.append(i.contents[0])
-      print((i.attrs['href']))
-      itemlist.append(i.attrs['href'])
-  elif "ticket" in TitleSplit:
-      print(str("\n"+i.contents[0]))
-      itemlist.append(i.contents[0])
-      print((i.attrs['href']))
-      itemlist.append(i.attrs['href'])
-  elif "telescope" in TitleSplit:
       print(str("\n"+i.contents[0]))
       itemlist.append(i.contents[0])
       print((i.attrs['href']))
@@ -132,7 +61,6 @@ while True:
 
   pageval += 120
 
-#print(totalist)
 now = datetime.now()
 current_time = now.strftime("%H:%M:%S")
 
